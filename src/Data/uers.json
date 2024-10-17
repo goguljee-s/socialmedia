@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Alice Johnson",
+    "userId": "1",
+    "email": "alice.johnson@example.com",
+    "pass": "1234",
+    "mobile": "1234567890",
+    "profileImage": "https://th.bing.com/th/id/OIP.mLEDG5Bw0WEKZf4sfSUfRgHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "darkMode": false,
+    "posts": [
+      {
+        "postId": "202310011200001",
+        "postImage": "https://wallpapercave.com/wp/wp8691576.jpg"
+      },
+      {
+        "postId": "202310020830001",
+        "postImage": "https://wallpaperaccess.com/full/5202099.jpg"
+      },
+      {
+        "postId": "202310031415001",
+        "postImage": "https://wallpapercave.com/wp/wp6987774.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Bob Smith",
+    "userId": "2",
+    "email": "bob.smith@example.com",
+    "pass": "1234",
+    "mobile": "2345678901",
+    "profileImage": "https://th.bing.com/th/id/OIP.q8b4H28miIBihK3T63CG9gHaKj?w=151&h=215&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "darkMode": true,
+    "posts": [
+      {
+        "postId": "202310011000002",
+        "postImage": "https://getwallpapers.com/wallpaper/full/b/7/0/765203-technology-background-images-1920x1080-hd.jpg"
+      },
+      {
+        "postId": "202310021600002",
+        "postImage": "https://images7.alphacoders.com/409/409554.jpg"
+      },
+      {
+        "postId": "202310031145002",
+        "postImage": "https://rare-gallery.com/uploads/posts/521242-painting.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Charlie Brown",
+    "userId": "3",
+    "email": "charlie.brown@example.com",
+    "pass": "1234",
+    "mobile": "3456789012",
+    "profileImage": "https://th.bing.com/th/id/OIP.evA9TCltFSDey2eOtjIeXwHaLH?w=121&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "darkMode": false,
+    "posts": [
+      {
+        "postId": "202310011500003",
+        "postImage": "https://wallpaperaccess.com/full/6133725.jpg"
+      },
+      {
+        "postId": "202310020930003",
+        "postImage": "https://wallpaperaccess.com/full/1739009.jpg"
+      },
+      {
+        "postId": "202310031720003",
+        "postImage": "https://audiohype.io/wp-content/uploads/2020/09/The-Best-Spotify-Playlists.png"
+      }
+    ]
+  },
+  {
+    "name": "Diana Prince",
+    "userId": "4",
+    "email": "diana.prince@example.com",
+    "pass": "1234",
+    "mobile": "4567890123",
+    "profileImage": "https://th.bing.com/th/id/OIP.8H9ocnHwr0V3DI4gXxekCQHaHT?w=226&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    "darkMode": true,
+    "posts": [
+      {
+        "postId": "202310011800004",
+        "postImage": "https://wallpapercave.com/wp/wp2042418.jpg"
+      },
+      {
+        "postId": "202310020930004",
+        "postImage": "https://wallpaperaccess.com/full/1043100.jpg"
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+    "light":{
+        "id":"1",
+        "name":"light",
+        "body":{
+            "background":"#FFFFFF",
+            "text":"#000000"
+        },
+        "button":{
+            "background":"#454545",
+            "text":"#FFFFFF"
+        },
+        "link":{
+            "text":"#008080"
+        }
+    },
+    "dark":{
+        "id":"2",
+        "name":"dark",
+        "body":{
+            "background":"#000000",
+            "text":"#FFFFFF"
+        },
+        "button":{
+            "background":"#FFFFFF",
+            "text":"#000000"
+        },
+        "link":{
+            "text":"#008080"
+        }
+    }
+}
