@@ -61,7 +61,11 @@ function UserView() {
         <div className="us-header">
           <div className="us-profile">
             <img
-              src={viewUser.profileImage}
+              src={
+                viewUser.profileImage !== ""
+                  ? viewUser.profileImage
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png"
+              }
               alt=""
               className="rounded-us-pic"
             />
@@ -69,8 +73,8 @@ function UserView() {
           </div>
           <div className="us-details">
             <div className="us-name">
-              <button className='edit'>Edit Profile</button>
-              <button className='setting'>Setting</button>
+              <button className="edit">Edit Profile</button>
+              <button className="setting">Setting</button>
             </div>
             <div className="us-content">
               <div>Followers 300</div>
@@ -89,8 +93,13 @@ function UserView() {
           </div>
           <div className="us-posts">
             {posts.map((post) => (
-              <div className="us-flex-item" onClick={(event) => { handleClick(event,post.postId)}}>
-                <UeserPost  post={post.postImage} />
+              <div
+                className="us-flex-item"
+                onClick={(event) => {
+                  handleClick(event, post.postId);
+                }}
+              >
+                <UeserPost post={post.postImage} />
               </div>
             ))}
           </div>

@@ -38,7 +38,6 @@ function Post({ Posts}) {
     }
    }
   function handleClickCmt(event, postId,likeCount) {
-    console.log(postId)
     const rect = event.target.getBoundingClientRect();
     const pos = {
       top:window.scrollY+1,
@@ -58,13 +57,16 @@ function Post({ Posts}) {
   }
 
   return (
-    <div className="post-container" >
+    <div className="post-container">
       <article className="post">
-        <div className="post-head" onClick={async () => {
-          visitUser(user);
-        }}>
+        <div
+          className="post-head"
+          onClick={async () => {
+            visitUser(user);
+          }}
+        >
           <div className="profile">
-            <img src={user.profileImage} id="avatar" />
+            <img src={user.profileImage!= "" ? user.profileImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png"}id="avatar" />
             <div>
               <div className="pt-name">{user.name}</div>
               <div className="time">2hrs</div>
@@ -76,7 +78,10 @@ function Post({ Posts}) {
         </div>
         <div className="post-body">
           <div className="caption">{Posts.caption}</div>
-          <img src={Posts.postImage} width="100%"></img>
+          <img
+            src={ Posts.postImage}
+            width="100%"
+          ></img>
         </div>
         <div className="post-foot">
           <div className="interaction">
@@ -97,12 +102,12 @@ function Post({ Posts}) {
                   </div>
                 )}
               </button>
-              <div className="ints-val" >{Likes}</div>
+              <div className="ints-val">{Likes}</div>
             </div>
             <div className="pt-ints">
               <button
                 onClick={(event) => {
-                  handleClickCmt(event, Posts.postId,Likes);
+                  handleClickCmt(event, Posts.postId, Likes);
                 }}
               >
                 <CommentIcon />

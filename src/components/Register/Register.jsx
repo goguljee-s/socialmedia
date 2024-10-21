@@ -1,20 +1,19 @@
-import React, { useContext, useEffect, useRef, useState} from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../contexts/ContextProvider";
 
 function Register() {
-
-   const register = useRef();
-   const login = useRef();
-   const nameRef = useRef();
-   const emailRef = useRef();
-   const phoneRef = useRef();
-   const passRef = useRef();
-   const rule = useRef();
+  const register = useRef();
+  const login = useRef();
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const phoneRef = useRef();
+  const passRef = useRef();
+  const rule = useRef();
   const nxt = useRef();
 
   const submitBtn = useRef();
-   const errorRef = useRef();
+  const errorRef = useRef();
   const cpassRef = useRef();
 
   const { setLoginStatus } = useContext(DataContext);
@@ -23,14 +22,13 @@ function Register() {
     email: "",
     phone: "",
     pass: "",
-    posts:[],
+    posts: [],
     profileImage: "",
     darkMode: false,
-
   });
   const [loginData, setLoginData] = useState({
     email: "",
-    pass:""
+    pass: "",
   });
   const [crntTab, setTab] = useState(1);
   const [err, setErr] = useState("");
@@ -45,17 +43,16 @@ function Register() {
 
   useEffect(() => {
     submitBtn.current.disabled = !Object.values(validate).every((e) => e);
-  },[validate])
+  }, [validate]);
 
   //regression
-   const nameReg = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
-   const emailReg =
-     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-   const passReg =
-     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{6,15}$/;
-   const phoneReg = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+  const nameReg = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
+  const emailReg =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const passReg =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{6,15}$/;
+  const phoneReg = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 
-  
   async function signUp(e) {
     e.preventDefault();
     try {
@@ -74,12 +71,11 @@ function Register() {
         register.current.reset();
       }
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   }
   async function Login(e) {
     e.preventDefault();
-    console.log(loginData);
     const res = await fetch(`http://localhost:8000/authenticate`, {
       method: "POST",
       headers: {
@@ -90,18 +86,16 @@ function Register() {
         pass: loginData.pass,
       }),
     });
-    console.log(res);
-    if (res.status==200) {
+    if (res.status == 200) {
       const resData = await res.json();
-      console.log(resData);
       sessionStorage.setItem("authenticated", "true");
       sessionStorage.setItem("user", JSON.stringify(resData));
-      navigate('/home', { replace: true });
+      navigate("/home", { replace: true });
     } else {
       setErr("Invalid Crendential");
-      errorRef.current.style.display = 'block';
+      errorRef.current.style.display = "block";
     }
-}
+  }
 
   function changeTab(tab) {
     setTab(tab);
@@ -111,8 +105,7 @@ function Register() {
   function changeForm(id) {
     if (id === 1) {
       login.current.style.display = "none";
-      register.current.style.display = 'block'
-      
+      register.current.style.display = "block";
     } else {
       register.current.style.display = "none";
       login.current.style.display = "block";
@@ -122,19 +115,18 @@ function Register() {
   //validation
 
   function handleChange(e) {
-
-    if (e.target.name == 'lmail') {
+    if (e.target.name == "lmail") {
       if (!emailReg.test(e.target.value)) {
         setErr("Enter the valid mail");
-         emailRef.current.style.borderColor = "red";
-         errorRef.current.style.display = "block";
+        emailRef.current.style.borderColor = "red";
+        errorRef.current.style.display = "block";
       } else {
         setLoginData((input) => ({ ...input, email: e.target.value }));
         emailRef.current.style.borderColor = "black";
         errorRef.current.style.display = "none";
-       }
+      }
     }
-    if (e.target.name == 'lpass') {
+    if (e.target.name == "lpass") {
       setLoginData((input) => ({ ...input, pass: e.target.value }));
     }
     //registraion
@@ -201,7 +193,7 @@ function Register() {
       } else {
         setValidate((validate) => ({ ...validate, [e.target.name]: true }));
         cpassRef.current.style.borderColor = "black";
-        
+
         errorRef.current.style.display = "none";
       }
     }

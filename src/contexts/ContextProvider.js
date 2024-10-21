@@ -11,9 +11,6 @@ function ContextProvider({children}) {
   const [isPostfeed, setPostFeed] = useState(true);
   const [viewUser, setUser] = useState(null);
   const [AId, SetAId] = useState();
-  const [loginStatus, setLoginStatus] = useState(
-    JSON.parse(sessionStorage.getItem("authenticated"))
-  );
   const [menuItems, setMenuItems] = useState([
     {
       name:"Mode",
@@ -25,9 +22,10 @@ function ContextProvider({children}) {
     {
       name: "Log out",
       function: () => {
-        console.log("log out")
-        setLoginStatus(false);
         sessionStorage.removeItem("user");
+        sessionStorage.removeItem("authenticated");
+        setShowCmt(false);
+        setShowMenu(false);
       },
     }
   ])
@@ -86,7 +84,6 @@ function ContextProvider({children}) {
         AId,
         menuItems,
         darkMode,
-        loginStatus
       }}
     >
       {children}

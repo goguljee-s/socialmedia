@@ -25,7 +25,6 @@ function CreatePost({ show, close, position }) {
     return `${year}${month}${day}${hours}${minutes}${seconds}`;
   }
   function handleChange(e) {
-    console.log(postForm);
     if (e.target.name == "url") {
       setPostForm((form) =>( { ...form, postImage: e.target.value }))
     }
@@ -36,7 +35,6 @@ function CreatePost({ show, close, position }) {
     }
   }
   async function postData(Data) {
-    console.log(Data)
     try {
       const res = await fetch(`http://localhost:8000/addposts/`, {
         method: "POST",
@@ -55,7 +53,6 @@ function CreatePost({ show, close, position }) {
   }
   function post(e) {
     e.preventDefault();
-    console.log(Auser)
     if (Auser.user.userId) {
       if (postForm.postImage != "" && postForm.caption != "") {
         postData(postForm);

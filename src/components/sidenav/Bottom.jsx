@@ -1,14 +1,11 @@
 import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
 import ExploreIcon from "@mui/icons-material/Explore";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import MessageIcon from "@mui/icons-material/Message";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import MenuIcon from "@mui/icons-material/Menu";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { DataContext } from '../../contexts/ContextProvider';
 function Bottom() {
   const { isPostfeed, setPostFeed,visitUser,Auser } = useContext(DataContext);
